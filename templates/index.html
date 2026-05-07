@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Best library!</title>
+    <script type="text/javascript" src="/static/update.js"></script>
+    <link href="static/store.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Game library:</h1>
+    <h3>Add new game:</h3>
+    <form>
+        <div>
+            <input type="text" name="game_name" id="game_name">
+            <label for="game_name">Game name</label>
+        </div>
+        <div>
+            <input type="text" name="year" id="year">
+            <label for="year">Year</label>
+        </div>
+        <button onClick="addGame()">Add</button>
+        <button onClick="clearList()">Clear</button>
+    </form>
+    <ul>
+        {% for game in games_list %}
+        <li>
+            <div>
+                <div>{{ game['game_name'] }}</div>
+                <div>{{ game['year'] }}</div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
